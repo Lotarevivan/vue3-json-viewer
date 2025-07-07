@@ -40,6 +40,8 @@ export default defineComponent({
     },
     /** Whether preview mode is enabled. Passed down from JsonViewer. */
     previewMode: Boolean,
+     /** Show array element index. */
+    showArrayIndex: Boolean,
   },
   /**
    * Setup function for the JsonBox component.
@@ -160,6 +162,7 @@ export default defineComponent({
           depth: props.depth,   // Pass current depth
           expand: expand.value, // Pass current expand state
           previewMode: props.previewMode,
+          showArrayIndex: props.showArrayIndex,
           // Listen for 'update:expand' events from child components (e.g., JsonArray, JsonObject)
           // This allows children to request a change in their own expansion state.
           "onUpdate:expand": (newExpandState: boolean) => {

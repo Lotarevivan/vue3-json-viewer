@@ -30,6 +30,8 @@ export default defineComponent({
     sort: Boolean,
     /** Whether preview mode is enabled. */
     previewMode: Boolean,
+    /** Show array element index. */
+    showArrayIndex: Boolean,
   },
   emits: ['update:expand'],
   /**
@@ -132,6 +134,7 @@ export default defineComponent({
               depth: props.depth + 1,
               value: itemValue,
               previewMode: props.previewMode,
+              showArrayIndex: props.showArrayIndex
             }));
           }
         }

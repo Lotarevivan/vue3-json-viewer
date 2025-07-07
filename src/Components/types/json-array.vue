@@ -30,6 +30,8 @@ export default defineComponent({
     expand: Boolean,
     /** Whether preview mode is enabled (potentially showing a condensed view). */
     previewMode: Boolean,
+    /** Show array element index. */
+    showArrayIndex: Boolean,
   },
   emits: ['update:expand'],
   /**
@@ -118,11 +120,13 @@ export default defineComponent({
         internalValue.value.forEach((itemValue, key) => {
           elements.push(h(JsonBox as Component, { // Cast JsonBox to Component
             key,
+            keyName: props.showArrayIndex ? `${key}`: '',
             // style: { display: props.expand ? undefined : 'none' }, // This style is redundant if items are not rendered
             sort: props.sort,
             depth: props.depth + 1,
             value: itemValue,
             previewMode: props.previewMode,
+            showArrayIndex: props.showArrayIndex
           }));
         });
       }

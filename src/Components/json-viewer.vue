@@ -8,7 +8,7 @@
       </span>
     </div>
     <div class="jv-code" :class="{ open: expandCode, boxed }">
-      <json-box ref="jsonBox" :value="parseValue" :sort="sort" :preview-mode="previewMode" />
+      <json-box ref="jsonBox" :value="parseValue" :sort="sort" :show-array-index="showArrayIndex" :preview-mode="previewMode" />
     </div>
     <div v-if="expandableCode && boxed" class="jv-more" @click="toggleExpandCode">
       <span class="jv-toggle" :class="{ open: !!expandCode }" />
@@ -59,6 +59,8 @@ export interface JsonViewerProps {
   theme?: string;
   /** A function to format date values. */
   timeformat?: (value: Date) => string;
+    /** Show array element index. */
+  showArrayIndex?: boolean;
   /** Whether to enable preview mode, which might show a condensed view. */
   previewMode?: boolean;
   /** Whether to attempt parsing the `value` prop if it's a string. */
@@ -111,6 +113,11 @@ export default defineComponent({
       type: Boolean as PropType<JsonViewerProps['previewMode']>,
       default: false,
     },
+    showArrayIndex: {
+      type: Boolean as PropType<JsonViewerProps['previewMode']>,
+      default: true,
+    },
+  /** Whether to enable preview mode, which might show a condensed view. */
     parse: {
       type: Boolean as PropType<JsonViewerProps['parse']>,
       default: false,
