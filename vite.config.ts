@@ -14,7 +14,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'Vue3JsonViewer',
-      fileName: 'vue3-json-viewer',
+      fileName: 'json-viewer-vue3',
       formats: ['es', 'cjs'],
     },
     rollupOptions: {

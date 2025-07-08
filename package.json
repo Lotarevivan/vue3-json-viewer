@@ -2,10 +2,9 @@
   "name": "json-viewer-vue3",
   "version": "2.4.1",
   "description": "vuejs展示json的组件,适配vue3",
-  "main": "dist/vue3-json-viewer.js",
-  "module": "dist/vue3-json-viewer.mjs",
-  "types": "dist/vue3-json-viewer.d.ts",
-  "style": "dist/style.css",
+  "main": "dist/json-viewer-vue3.js",
+  "module": "dist/json-viewer-vue3.mjs",
+  "types": "dist/json-viewer-vue3.d.ts",
   "files": [
     "dist"
   ],
@@ -26,7 +25,7 @@
   "bugs": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qiuquanwu/vue3-json-viewer"
+    "url": "git+https://github.com/Lotarevivan/vue3-json-viewer"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
